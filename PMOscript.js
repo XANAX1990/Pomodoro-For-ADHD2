@@ -78,13 +78,13 @@ longBreak.addEventListener("click", () => {
 testBtn.addEventListener("click", () => {
     hideAll()
 
-    test.style.display = "block"
-
+    testTimer.style.display = "block"
     session.classList.remove("active")
-    shortBreak.classList.add("active")
+    shortBreak.classList.remove("active")
     longBreak.classList.remove("active")
+    testBtn.classList.add("active")
+    currentTimer = testTimer
 
-    currentTimer = short
     clearInterval(myInterval)
     resetTimer(currentTimer)
 })
@@ -110,11 +110,11 @@ function startTimer(timerDisplay) {
         if (timeRemaining <= 0) {
             clearInterval(myInterval);
             timeElement.textContent = "00:00";
-            
+
             const alarm = new Audio(ALARM_SOUND);
             alarm.volume = 0.5;
-            alarm.play().catch(e => console.log("Audio Error:", e)); 
-            
+            alarm.play().catch(e => console.log("Audio Error:", e));
+
         } else {
             const minutes = Math.floor(timeRemaining / 60000);
             const seconds = Math.floor((timeRemaining % 60000) / 1000);
@@ -162,4 +162,3 @@ resetBtn.addEventListener("click", () => {
     }
 
 })
-
