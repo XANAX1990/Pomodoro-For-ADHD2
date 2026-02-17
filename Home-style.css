@@ -7,7 +7,7 @@
 
 .hero{
     width: 100%;
-    min-height: 100%;
+    min-height: 100vw;
     background: linear-gradient(45deg, #282562, #242274);
     color: #fff;
     position: relative;
@@ -87,5 +87,6 @@
     content: 'SECOND';
 
 }
+
 
 
