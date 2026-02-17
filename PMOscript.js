@@ -1,6 +1,7 @@
 let pomodoro = document.getElementById("pomodoro-timer")
 let short = document.getElementById("short-timer")
 let long = document.getElementById("long-timer")
+let test = document.getElementById("test")
 let timers = document.querySelectorAll(".timer-display")
 let session = document.getElementById("pomodoro-session")
 let shortBreak = document.getElementById("short-break")
@@ -72,6 +73,19 @@ longBreak.addEventListener("click", () => {
     resetTimer(currentTimer)
 })
 
+test.addEventListener("click", () => {
+    hideAll()
+
+    test.style.display = "block"
+
+    session.classList.remove("active")
+    shortBreak.classList.add("active")
+    longBreak.classList.remove("active")
+
+    currentTimer = short
+    clearInterval(myInterval)
+    resetTimer(currentTimer)
+})
 
 function startTimer(timerDisplay) {
     if (myInterval) {
@@ -158,4 +172,5 @@ resetBtn.addEventListener("click", () => {
     if (currentTimer) {
         resetTimer(currentTimer)
     }
+
 })
