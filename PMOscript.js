@@ -20,9 +20,8 @@ let currentTimer = null
 let myInterval = null
 
 function showDefaultTimer() {
+    hideAll()
     pomodoro.style.display = "block"
-    short.style.display = "none"
-    long.style.display = "none"
     currentTimer = pomodoro
 }
 
@@ -42,6 +41,7 @@ session.addEventListener("click", () => {
     session.classList.add("active")
     shortBreak.classList.remove("active")
     longBreak.classList.remove("active")
+    testBtn.classList.remove("active")
 
     currentTimer = pomodoro
     clearInterval(myInterval)
@@ -56,6 +56,7 @@ shortBreak.addEventListener("click", () => {
     session.classList.remove("active")
     shortBreak.classList.add("active")
     longBreak.classList.remove("active")
+    testBtn.classList.remove("active")
 
     currentTimer = short
     clearInterval(myInterval)
@@ -70,6 +71,7 @@ longBreak.addEventListener("click", () => {
     session.classList.remove("active")
     shortBreak.classList.remove("active")
     longBreak.classList.add("active")
+    testBtn.classList.remove("active")
     currentTimer = long
     clearInterval(myInterval)
     resetTimer(currentTimer)
