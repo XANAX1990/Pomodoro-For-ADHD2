@@ -1,11 +1,13 @@
 let pomodoro = document.getElementById("pomodoro-timer")
 let short = document.getElementById("short-timer")
 let long = document.getElementById("long-timer")
-let test = document.getElementById("test")
+let testTimer = document.getElementById("test-timer")
 let timers = document.querySelectorAll(".timer-display")
 let session = document.getElementById("pomodoro-session")
 let shortBreak = document.getElementById("short-break")
 let longBreak = document.getElementById("long-break")
+
+let testBtn = document.getElementById("test-mode")
 let startBtn = document.getElementById("start")
 let stopBtn = document.getElementById("stop")
 let resetBtn = document.getElementById("reset")
@@ -73,7 +75,7 @@ longBreak.addEventListener("click", () => {
     resetTimer(currentTimer)
 })
 
-test.addEventListener("click", () => {
+testBtn.addEventListener("click", () => {
     hideAll()
 
     test.style.display = "block"
@@ -93,44 +95,31 @@ function startTimer(timerDisplay) {
     }
 
     let timeElement = timerDisplay.querySelector(".time");
+    let durationAttr = timerDisplay.getAttribute("data-duration");
 
+    let parts = durationAttr.split(":");
+    let mins = parseFloat(parts[0]);
+    let secs = parts.length > 1 ? parseFloat(parts[1]) : 0;
 
-    timerDuration = timerDisplay
-        .getAttribute("data-duration")
-        .split(":")[0];
-
-    let durationinmiliseconds = timerDuration * 60 * 1000;
+    let durationinmiliseconds = (mins * 60 * 1000) + (secs * 1000);
     let endTimestamp = Date.now() + durationinmiliseconds;
 
-
-    let initialMinutes = parseInt(timerDuration);
-    timeElement.textContent = initialMinutes.toString().padStart(2, "0") + ":00";
-
     myInterval = setInterval(function () {
-        const timeRemaining = new Date(endTimestamp - Date.now());
+        const timeRemaining = endTimestamp - Date.now();
 
         if (timeRemaining <= 0) {
             clearInterval(myInterval);
             timeElement.textContent = "00:00";
+            
             const alarm = new Audio(ALARM_SOUND);
             alarm.volume = 0.5;
-            alarm.play();
+            alarm.play().catch(e => console.log("Audio Error:", e)); 
+            
         } else {
             const minutes = Math.floor(timeRemaining / 60000);
-            const seconds = ((timeRemaining % 60000) / 1000).toFixed(0);
+            const seconds = Math.floor((timeRemaining % 60000) / 1000);
 
-            let displayMinutes = minutes;
-            let displaySeconds = seconds;
-
-            if (seconds == 60) {
-                displayMinutes = minutes + 1;
-                displaySeconds = 0;
-            }
-
-            const formattedTime = `${displayMinutes.toString().padStart(2, "0")}:${displaySeconds
-                .toString()
-                .padStart(2, "0")}`;
-
+            const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
             timeElement.textContent = formattedTime;
         }
     }, 1000);
@@ -140,16 +129,15 @@ function resetTimer(timerDisplay) {
     clearInterval(myInterval);
     myInterval = null;
 
-    let timerDuration = timerDisplay
-        .getAttribute("data-duration")
-        .split(":")[0];
-
-    let initialMinutes = parseInt(timerDuration);
+    let durationAttr = timerDisplay.getAttribute("data-duration");
+    let parts = durationAttr.split(":");
+    let mins = parseInt(parts[0]);
+    let secs = parts.length > 1 ? parseInt(parts[1]) : 0;
 
     let timeElement = timerDisplay.querySelector(".time");
 
     if (timeElement) {
-        timeElement.textContent = initialMinutes.toString().padStart(2, "0") + ":00";
+        timeElement.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
     }
 }
 
@@ -174,3 +162,4 @@ resetBtn.addEventListener("click", () => {
     }
 
 })
+
