@@ -6,9 +6,10 @@
 }
 
 .hero{
-    width: 100%;
-    min-height: 100vw;
+    width: 100vw;
+    min-height: 100vh;
     background: linear-gradient(45deg, #282562, #242274);
+    overflow: hidden;
     color: #fff;
     position: relative;
 }
@@ -87,6 +88,7 @@
     content: 'SECOND';
 
 }
+
 
 
 
