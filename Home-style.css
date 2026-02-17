@@ -6,8 +6,8 @@
 }
 
 .hero{
-    width: 100%;
-    height: 100vh;
+    width: 100;
+    height: 100;
     background: linear-gradient(45deg, #282562, #242274);
     margin: 0;
     padding: 0;
@@ -89,6 +89,7 @@
     content: 'SECOND';
 
 }
+
 
 
 
