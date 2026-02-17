@@ -22,6 +22,7 @@ nav {
   width: 55%;
   margin: 0 auto;
   border-radius: 0 0 10px 10px;
+  z-index: 9999;
 }
 
 nav .item {
@@ -105,4 +106,5 @@ nav .item:nth-child(3):hover ~ .underline {
 
 nav .item:nth-child(4):hover ~ .underline {
   translate: 300%;
+
 }
