@@ -10,7 +10,7 @@ body {
 }
 
 .hero {
-    width: 95%;
+    width: 100%;
     height: 100vh;
     background: linear-gradient(45deg, #282562, #242274);
     margin: 0;
@@ -21,11 +21,11 @@ body {
 }
 
 .container {
-    width: 800px;
-    height: 180px;
+    width: 1200px;
+    height: 200px;
     position: absolute;
-    top: 50%;
-    left: 55%;
+    top: 45%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background: #242274;
 }
@@ -94,6 +94,3 @@ body {
     content: 'SECOND';
 
 }
-
-
-
