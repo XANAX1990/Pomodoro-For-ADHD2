@@ -102,3 +102,43 @@ body {
     right: 30px;
     bottom: 75px;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        min-height: 150px;
+    }
+
+    .clock {
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .clock span {
+        font-size: 40px;
+        width: auto;
+        margin: 0 5px;
+    }
+
+    #ampm {
+        font-size: 16px;
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .container::before {
+        width: 100px;
+        height: 100px;
+        top: -30px;
+        left: -30px;
+    }
+
+    .container::after {
+        width: 100px;
+        height: 100px;
+        bottom: -30px;
+        right: -30px;
+    }
+}
