@@ -96,3 +96,9 @@ body {
 
 }
 
+#ampm {
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    bottom: 75px;
+}
