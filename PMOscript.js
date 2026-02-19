@@ -146,9 +146,9 @@ function resetTimer(timerDisplay) {
 startBtn.addEventListener("click", () => {
     if (currentTimer) {
         startTimer(currentTimer)
-        timerMsg.style.display = "none"
+        timerMsg.style.visibility = "hidden"
     } else {
-        timerMsg.style.display = "block"
+        timerMsg.style.visibility = "visible"
     }
 })
 
