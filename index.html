@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,17 @@
     <link rel="stylesheet" href="Home-style.css">
     <link rel="stylesheet" href="Navbar-style.css">
     <link rel="stylesheet" href="wave.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
+
 <body>
     <div id="nav-placeholder"></div>
     <script>
         fetch('Navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
-        });
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
     </script>
     <div class="hero">
         <div class="container">
@@ -26,15 +28,17 @@
                 <span id="min">00</span>
                 <span>:</span>
                 <span id="sec">00</span>
+                <span id="ampm">AM</span>
             </div>
         </div>
-    <section>
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
-    </section>
+        <section>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+        </section>
     </div>
     <script src="clock.js"></script>
 </body>
+
 </html>
