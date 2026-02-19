@@ -22,7 +22,7 @@ let myInterval = null
 function showDefaultTimer() {
     hideAll()
     pomodoro.style.display = "block"
-    currentTimer = pomodoro
+    // currentTimer intentionally null to mandate selection
 }
 
 showDefaultTimer()
