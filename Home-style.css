@@ -28,6 +28,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #242274;
+    z-index: 2000;
 }
 
 .clock {
@@ -94,3 +95,4 @@ body {
     content: 'SECOND';
 
 }
+
