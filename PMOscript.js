@@ -15,6 +15,15 @@ let timerMsg = document.getElementById("timer-message")
 let button = document.querySelector(".button")
 
 const ALARM_SOUND = "hassium.mp3";
+const alarm = new Audio(ALARM_SOUND);
+const volumeSlider = document.getElementById('volumeSlider');
+
+if (volumeSlider) {
+    alarm.volume = volumeSlider.value;
+    volumeSlider.addEventListener('input', function () {
+        alarm.volume = this.value;
+    });
+}
 
 let currentTimer = null
 let myInterval = null
@@ -22,7 +31,6 @@ let myInterval = null
 function showDefaultTimer() {
     hideAll()
     pomodoro.style.display = "block"
-    // currentTimer intentionally null to mandate selection
 }
 
 showDefaultTimer()
@@ -113,8 +121,7 @@ function startTimer(timerDisplay) {
             clearInterval(myInterval);
             timeElement.textContent = "00:00";
 
-            const alarm = new Audio(ALARM_SOUND);
-            alarm.volume = 0.5;
+            alarm.currentTime = 0;
             alarm.play().catch(e => console.log("Audio Error:", e));
 
         } else {
@@ -155,12 +162,16 @@ startBtn.addEventListener("click", () => {
 stopBtn.addEventListener("click", () => {
     if (currentTimer) {
         clearInterval(myInterval)
+        alarm.pause();
+        alarm.currentTime = 0;
     }
 })
 
 resetBtn.addEventListener("click", () => {
     if (currentTimer) {
         resetTimer(currentTimer)
+        alarm.pause();
+        alarm.currentTime = 0;
     }
 
 })
