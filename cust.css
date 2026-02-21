@@ -1,0 +1,143 @@
+/* Body styles inherited from Navbar-style.css */
+
+#timer-wrapper {
+    text-align: center;
+    color: #faf9f6;
+}
+
+#timer-wrapper * {
+    font-size: large;
+}
+
+#timer-wrapper h1 {
+    font-size: 3.5rem;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d9ff00;
+    text-shadow: 0 0 10px rgba(243, 255, 76, 0.5);
+    text-align: center;
+}
+
+#timer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+input {
+    width: 150px;
+    height: 50px;
+    justify-content: center;
+    margin: 5px;
+    border: 1px solid #faf9f6;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    border: 1px solid #faf9f6;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+#startButton {
+    background-color: #3357fc;
+}
+
+#pauseButton {
+    background-color: #eb0909;
+}
+
+#resumeButton {
+    background-color: #d8db20;
+}
+
+#resetButton {
+    background-color: #07e2ff;
+}
+
+#display-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#display {
+    width: 700px;
+    height: 150px;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remaining-text {
+    font-size: 1.5rem !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #07e2ff;
+}
+
+#volume-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#volume-control label {
+    font-size: 1.2rem;
+    color: #07e2ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 8px;
+    background: white;
+    border-radius: 5px;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00ffaa;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 255, 170, 0.5);
+}
