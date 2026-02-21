@@ -8,6 +8,8 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Euclid Circular A", "Poppins";
   background: linear-gradient(45deg, #282562, #242274);
   color: white;
@@ -21,7 +23,7 @@ nav {
   display: flex;
   width: 55%;
   margin: 0 auto;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0;
   z-index: 9999;
 }
 
@@ -49,7 +51,8 @@ nav .item {
   left: 0;
   top: 62px;
 }
-.dropdown > div {
+
+.dropdown>div {
   translate: 0 -100%;
   transition: all 0.5s 0.1s;
   position: relative;
@@ -81,30 +84,30 @@ nav .item {
   transition: 0.35s;
 }
 
-nav a.item:hover, 
-nav a.item:visited, 
+nav a.item:hover,
+nav a.item:visited,
 nav a.item:active {
   color: white;
   text-decoration: none;
 }
 
-nav .item:hover > .dropdown > div {
+nav .item:hover>.dropdown>div {
   translate: 0;
 }
 
-nav .item:nth-child(1):hover ~ .underline {
+nav .item:nth-child(1):hover~.underline {
   translate: 0;
 }
 
-nav .item:nth-child(2):hover ~ .underline {
+nav .item:nth-child(2):hover~.underline {
   translate: 100%;
 }
 
-nav .item:nth-child(3):hover ~ .underline {
+nav .item:nth-child(3):hover~.underline {
   translate: 200%;
 }
 
-nav .item:nth-child(4):hover ~ .underline {
+nav .item:nth-child(4):hover~.underline {
   translate: 300%;
 
 }
