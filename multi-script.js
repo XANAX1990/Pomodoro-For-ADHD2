@@ -1,6 +1,14 @@
 let countdown;
 const display = document.getElementById('display');
 const audio = new Audio('hassium.mp3');
+const volumeSlider = document.getElementById('volumeSlider');
+
+if (volumeSlider) {
+    audio.volume = volumeSlider.value;
+    volumeSlider.addEventListener('input', function () {
+        audio.volume = this.value;
+    });
+}
 
 function startTimer(seconds) {
     clearInterval(countdown);
