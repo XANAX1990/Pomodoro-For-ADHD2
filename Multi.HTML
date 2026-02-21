@@ -29,24 +29,25 @@
         <div class="status-text">REMAINING</div>
 
         <div class="controls">
+            <button onclick="startTimer(10)">10 Sec</button>
             <button onclick="startTimer(30)">30 Sec</button>
             <button onclick="startTimer(60)">1 Min</button>
             <button onclick="startTimer(120)">2 Min</button>
             <button onclick="startTimer(180)">3 Min</button>
             <button onclick="startTimer(300)">5 Min</button>
             <button onclick="startTimer(600)">10 Min</button>
-            <button onclick="startTimer(900)">15 Min</button>
             <button onclick="startTimer(1200)">20 Min</button>
-            <button onclick="startTimer(1500)">25 Min</button>
             <button onclick="startTimer(1800)">30 Min</button>
-            <button onclick="startTimer(2100)">35 Min</button>
             <button onclick="startTimer(2400)">40 Min</button>
-            <button onclick="startTimer(2700)">45 Min</button>
             <button onclick="startTimer(3000)">50 Min</button>
-            <button onclick="startTimer(3300)">55 Min</button>
             <button onclick="startTimer(3600)">60 Min</button>
 
             <button class="reset" onclick="resetTimer()">Reset</button>
+        </div>
+
+        <div id="volume-control">
+            <label for="volumeSlider">Volume</label>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
         </div>
     </div>
     <script src="multi-script.js"></script>
