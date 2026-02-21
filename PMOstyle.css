@@ -91,7 +91,8 @@ h1 {
     transition: all .2s ease-in;
 }
 
-.button.active, .button:hover {
+.button.active,
+.button:hover {
     background-color: #020323;
 }
 
@@ -109,7 +110,9 @@ h1 {
     margin-top: 20px;
 }
 
-#start, #stop, #reset {
+#start,
+#stop,
+#reset {
     background-color: #2e325a;
     color: #fff;
     border: none;
@@ -155,4 +158,46 @@ h1 {
     .timer {
         width: 500px;
     }
+}
+
+#volume-control {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    z-index: 10000;
+}
+
+#volume-control label {
+    font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00ffaa;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 255, 170, 0.5);
 }
