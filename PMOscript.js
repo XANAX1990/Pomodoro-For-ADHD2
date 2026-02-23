@@ -17,11 +17,14 @@ let button = document.querySelector(".button")
 const ALARM_SOUND = "hassium.mp3";
 const alarm = new Audio(ALARM_SOUND);
 const volumeSlider = document.getElementById('volumeSlider');
+const volumePercentage = document.getElementById('volumePercentage');
 
 if (volumeSlider) {
     alarm.volume = volumeSlider.value;
+    if (volumePercentage) volumePercentage.textContent = Math.round(volumeSlider.value * 100) + '%';
     volumeSlider.addEventListener('input', function () {
         alarm.volume = this.value;
+        if (volumePercentage) volumePercentage.textContent = Math.round(this.value * 100) + '%';
     });
 }
 
