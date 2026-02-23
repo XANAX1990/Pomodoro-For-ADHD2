@@ -23,6 +23,9 @@ document.getElementById('resumeButton').addEventListener('click', function () {
 document.getElementById('resetButton').addEventListener('click', function () {
     clearInterval(timer);
     document.getElementById('display').textContent = '00:00:00';
+    document.getElementById('hoursInput').value = '';
+    document.getElementById('minutesInput').value = '';
+    document.getElementById('secondsInput').value = '';
 });
 
 function startTimer() {
@@ -88,3 +91,4 @@ function enforceConstraint(input, max) {
 enforceConstraint(hoursInput, 23);
 enforceConstraint(minutesInput, 59);
 enforceConstraint(secondsInput, 59);
+
