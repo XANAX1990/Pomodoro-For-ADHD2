@@ -62,12 +62,15 @@ const hoursInput = document.getElementById('hoursInput');
 const minutesInput = document.getElementById('minutesInput');
 const secondsInput = document.getElementById('secondsInput');
 const volumeSlider = document.getElementById('volumeSlider');
+const volumePercentage = document.getElementById('volumePercentage');
 
 // Setup Volume Control
 if (volumeSlider) {
     audio.volume = volumeSlider.value;
+    if (volumePercentage) volumePercentage.textContent = Math.round(volumeSlider.value * 100) + '%';
     volumeSlider.addEventListener('input', function () {
         audio.volume = this.value;
+        if (volumePercentage) volumePercentage.textContent = Math.round(this.value * 100) + '%';
     });
 }
 
