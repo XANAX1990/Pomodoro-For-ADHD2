@@ -2,11 +2,14 @@ let countdown;
 const display = document.getElementById('display');
 const audio = new Audio('hassium.mp3');
 const volumeSlider = document.getElementById('volumeSlider');
+const volumePercentage = document.getElementById('volumePercentage');
 
 if (volumeSlider) {
     audio.volume = volumeSlider.value;
+    if (volumePercentage) volumePercentage.textContent = Math.round(volumeSlider.value * 100) + '%';
     volumeSlider.addEventListener('input', function () {
         audio.volume = this.value;
+        if (volumePercentage) volumePercentage.textContent = Math.round(this.value * 100) + '%';
     });
 }
 
